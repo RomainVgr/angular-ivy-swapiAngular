@@ -8,9 +8,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class MoviesListComponent implements OnInit {
   @Input() movieList = [];
   @Output() nawak = new EventEmitter<String>();
-  value;
+  value : any;
 
-  peuImporte(value) {
+  peuImporte(value : any) {
 
     this.nawak.emit(value)
   }
