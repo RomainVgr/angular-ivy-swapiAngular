@@ -10,6 +10,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   movies;
   details;
+  isLoading = true;
 
   constructor(private swapyService: SwapyService) {}
 
@@ -18,12 +19,14 @@ export class AppComponent {
 
     this.swapyService.getUrl(value).subscribe((data: any) => {
       this.details = data;
+      this.isLoading = false
     });
   }
 
   ngOnInit() {
     this.swapyService.getData().subscribe((data: any) => {
       this.movies = data.results;
+      this.isLoading = false
     });
   }
 }
