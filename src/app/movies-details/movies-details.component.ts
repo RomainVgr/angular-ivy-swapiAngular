@@ -10,11 +10,11 @@ export class MoviesDetailsComponent implements OnInit {
   constructor(private swapyService: SwapyService) {}
 
   @Input() movieUrl: any;
-  details;
+  details : any;
 
   ngOnInit() {
     this.swapyService.getUrl(this.movieUrl).subscribe((data: any) => {
-      this.details = data.results;
+      this.details = data;
 
       console.log(this.details);
     });
