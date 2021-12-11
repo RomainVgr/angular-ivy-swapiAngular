@@ -1,5 +1,8 @@
 <hello name="{{ name }}"></hello>
 <p>
-  <app-movies-list></app-movies-list>
-  <app-movies-details></app-movies-details>
+  <app-movies-list
+    [movieList]="movies"
+    (nawak)= "patapouf($event)"
+  ></app-movies-list>
+  <app-movies-details [movieDetails]="details"></app-movies-details>
 </p>

@@ -9,14 +9,11 @@ import { SwapyService } from '../swapy.service';
 export class MoviesDetailsComponent implements OnInit {
   constructor(private swapyService: SwapyService) {}
 
-  @Input() movieUrl: any;
-  details : any;
+  @Input() movieDetails: any;
+
 
   ngOnInit() {
-    this.swapyService.getUrl(this.movieUrl).subscribe((data: any) => {
-      this.details = data;
 
-      console.log(this.details);
-    });
+    
   }
 }

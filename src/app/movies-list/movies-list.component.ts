@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { SwapyService } from '../swapy.service';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
-  styleUrls: ['./movies-list.component.css']
+  styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent implements OnInit {
+  @Input() movieList = [];
+  @Output() nawak = new EventEmitter<String>();
+  value;
 
+  peuImporte(value) {
 
-movies: any;
-
-  constructor(private swapyService : SwapyService ) { }
-
-  ngOnInit() {
-
-    this.swapyService.getData().subscribe((data: any) => {
-      this.movies = data.results;
-     
-  });
-
+    this.nawak.emit(value)
   }
-  
+
+  constructor() {}
+
+  ngOnInit() {}
 }

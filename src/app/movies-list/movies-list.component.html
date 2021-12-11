@@ -1,5 +1,4 @@
-<div *ngFor = "let movie of movies">
-  <p>{{movie.title}}</p>
-
+<div *ngFor = "let movie of movieList">
+  <p (click) = "peuImporte(movie.url)">{{movie.title}}</p>
 </div>
   <p> </p>
