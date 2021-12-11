@@ -1,11 +1,13 @@
 <hello name="{{ name }}"></hello>
 
-  <div *ngIf ="isLoading">
-ATTEND CA CHARGE 
-  </div>
-  <app-movies-list
-    [movieList]="movies"
-    (nawak)= "patapouf($event)"
-  ></app-movies-list>
-  <app-movies-details [movieDetails]="details"></app-movies-details>
+<div *ngIf="isLoading">ATTEND CA CHARGE</div>
 
+<div style="display:inline-flex">
+<app-movies-list
+  [movieList]="movies"
+  (nawak)="patapouf($event)"
+></app-movies-list>
+
+<app-movies-details [movieDetails]="details"></app-movies-details>
+
+</div>

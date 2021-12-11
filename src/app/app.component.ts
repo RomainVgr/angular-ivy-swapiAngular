@@ -16,6 +16,7 @@ export class AppComponent {
 
   patapouf(value: any) {
     //console.log(value)
+    this.isLoading = true;
 
     this.swapyService.getUrl(value).subscribe((data: any) => {
       this.details = data;
